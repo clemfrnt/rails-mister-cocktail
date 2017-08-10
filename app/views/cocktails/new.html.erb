@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-6 col-xs-offset-3">
+    <div class="col-xs-8 col-xs-offset-2">
       <h1>Add a new Cocktail🍹🍹</h1>
-      simple_form_for (@new_cocktail) do |f|
-      <%= f.label 'Name' %>
-      <%= f.input 'Name' %>
-      <%=  f.submit 'Share it !' %>
+      <%= simple_form_for [@new_cocktail] do |f| %>
+        <%= f.input :name %>
+        <%= f.submit 'Share it !' %>
+      <% end %>
     </div>
   </div>
 </div>
