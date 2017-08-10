@@ -1,0 +1,23 @@
+.cover {
+  color: white;
+  height: calc(100vh - 70px);
+  background-size: cover !important;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.cover h1 {
+  font-family: "Alfa Slab One";
+  font-size: 45px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  padding: 60px;
+}
+.cover p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+}

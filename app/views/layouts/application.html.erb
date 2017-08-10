@@ -5,15 +5,21 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail" rel="stylesheet">
   </head>
 
   <body>
   <div class="banner navbar-wagon">
     <%= link_to cocktails_path do %>
-      <i class="fa fa-cutlery " aria-hidden="true"></i>
+      <i class="fa fa-glass" aria-hidden="true"></i>
       Drinkers
     <% end %>
-  </div>
+      <div class="navbar-wagon-right hidden-xs hidden-sm">
+        <%= link_to "Check at Cocktails List", cocktails_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Add a Cocktail", new_cocktail_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      </div>
+   </div>
 
     <%= yield %>
 
