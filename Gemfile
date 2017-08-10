@@ -56,9 +56,8 @@ gem 'rails-controller-testing', group: [ :test ]
 
 ruby '2.3.4'
 
-group :front_end do
-  gem "bootstrap-sass"
-  gem "font-awesome-sass"
-  gem "simple_form"
-  gem "autoprefixer-rails"
-end
+gem "bootstrap-sass"
+gem "font-awesome-sass"
+gem "simple_form"
+gem "autoprefixer-rails"
+
