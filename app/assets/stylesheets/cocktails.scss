@@ -6,10 +6,33 @@ h1 {
   color: orange;
 }
 
-p {
+ul {
+  list-style: none;
+}
+
+a {
   color: orange;
 }
 
-p:hover {
-  color: yellow;
+a:hover {
+  color: orange;
+  opacity: 0.8;
+
+  text-decoration: none
 }
+.container a:hover {
+  font-size: 20px;
+}
+
+.row {
+  text-align: center
+}
+
+.name {
+  color: brown;
+  font-weight: bolder;
+  font-size: 22px;
+  margin: 6px;
+}
+
+

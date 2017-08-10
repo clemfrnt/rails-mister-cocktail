@@ -2,8 +2,30 @@
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3">
       <h1>🍹Cocktail's Detail🍹</h1>
-    <%= @cocktail.name %>
-    <%= link_to "Add a Dose", new_cocktail_dose_path %>
+      <div class="name">
+        <%= @cocktail.name %>
+        <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li><%= dose.description %></li> of <% dose.ingredient.name %>
+        <% end %>
+        </ul>
+      </div>
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :description %>
+        <%= f.association :ingredient %>
+        <%= f.submit  class: "btn btn-warning" %>
+      <% end %>
+      <div class="doses_plus">
+      <%= link_to new_cocktail_dose_path(@cocktail) do %>
+        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+      <% end %>
+
+        <i class="fa fa-minus-circle" aria-hidden="true"></i>
+
+        </br>
+      <%= link_to 'Back to list', cocktails_path %>
+      </div>
     </div>
   </div>
 </div>
