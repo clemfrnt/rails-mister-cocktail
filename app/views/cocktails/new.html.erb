@@ -4,6 +4,7 @@
       <h1>Add a new Cocktail🍹🍹</h1>
       <%= simple_form_for [@new_cocktail] do |f| %>
         <%= f.input :name %>
+        <%= f.input :photo, as: :attachinary %>
         <%= f.submit 'Share it !' %>
       <% end %>
     </div>
