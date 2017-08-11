@@ -6,10 +6,9 @@ class DosesController < ApplicationController
   end
 
   def create
-
-    @new_dose = Dose.new(set_params)
-    @new_dose.cocktail = @cocktail
-    if @new_dose.save
+    @dose = Dose.new(set_params)
+    @dose.cocktail = @cocktail
+    if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
       render "cocktails/show"
