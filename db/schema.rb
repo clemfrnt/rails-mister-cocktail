@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170811125022) do
+ActiveRecord::Schema.define(version: 20170811095147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,9 +25,10 @@ ActiveRecord::Schema.define(version: 20170811125022) do
     t.integer  "height"
     t.string   "format"
     t.string   "resource_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
+    t.index ["attachinariable_type", "attachinariable_id"], name: "toto", using: :btree
   end
 
   create_table "cocktails", force: :cascade do |t|
@@ -39,9 +40,9 @@ ActiveRecord::Schema.define(version: 20170811125022) do
   create_table "doses", force: :cascade do |t|
     t.string   "description"
     t.integer  "cocktail_id"
+    t.integer  "ingredient_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.integer  "ingredient_id"
     t.index ["cocktail_id"], name: "index_doses_on_cocktail_id", using: :btree
     t.index ["ingredient_id"], name: "index_doses_on_ingredient_id", using: :btree
   end

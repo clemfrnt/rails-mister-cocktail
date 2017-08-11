@@ -18,20 +18,20 @@
             <% end %>
           </h6>
         </ul>
+
         <h4>Add a new ingredient</h4>
         <%= simple_form_for [@cocktail, @dose] do |f| %>
           <%= f.error_notification %>
           <%= f.input :description %>
           <%= f.association :ingredient %>
-          <%= f.submit  %>
-        <% end %>
-        <div class="doses_plus">
-          <%= link_to new_cocktail_dose_path(@cocktail) do %>
-            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+          <%= button_tag type: 'submit' do %>
+           <i class="fa fa-plus-circle" aria-hidden="true">
+           <i class="fa fa-plus-circle" aria-hidden="true"></i>
+          </i>
           <% end %>
-          </br></br></br>
-          <%= link_to 'Back to list', cocktails_path %>
-        </div>
+        <% end %>
+        </br></br></br>
+        <%= link_to 'Back to list', cocktails_path %>
       </div>
     </div>
   </div>
